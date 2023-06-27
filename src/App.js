@@ -1,25 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import { Routes, Route, BrowserRouter } from 'react-router-dom';
+import Home from './Pages/Home/Home'
+import Shop from './Pages/Shop/Shop';
+import MyOrders from './Pages/MyOrders/MyOrders';
+import Information from './Pages/Information/Information';
+import OpenedSneakerCard from './Pages/Shop/Components/OpenedSneakerCard';
+import Cart from './Pages/Shop/Components/Cart';
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <BrowserRouter>
+        <Routes>
+          <Route index element={<Home />} />
+          <Route exact path="/" element={<Home />} />
+          <Route path="/shop" element={<Shop />} />
+          <Route path="/my-orders" element={<MyOrders />}/>
+          <Route path="/information" element={<Information />}/>
+          <Route path="/:title" element={<OpenedSneakerCard />} /> {/* Добавленный маршрут для открытой карточки */}
+          <Route path="/cart" element={<Cart />} /> {/* Добавленный маршрут для открытой карточки */}
+        </Routes>
+      </BrowserRouter>
     </div>
   );
-}
+};
 
 export default App;
