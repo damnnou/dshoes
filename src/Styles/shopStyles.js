@@ -7,6 +7,7 @@ export const styles = {
     card: 'w-[300px] h-[350px] mx-8 mb-12 cursor-pointer [&>div]:transition [&>img]:transition [&>div]:delay-50 [&>img]:delay-50 [&>div]:hover:text-black [&>img]:hover:opacity-20 [&>div]:duration-300 [&>img]:duration-300',
     openedcard: 'flex justify-center mt-20 z-30 mx-[200px] h-[50%]',
     addbutton: 'border border-black p-3 text-xs transition delay-50 duration-300 hover:text-white hover:bg-black text-black bg-white',
+    addedbutton: 'border border-black p-3 text-xs transition delay-50 duration-300 text-white bg-black',
     cart: 'flex w-full justify-center items-center mt-20 z-30 ',
-    cartItem: 'flex items-center '
+    cartItem: 'flex items-center my-12'
 }

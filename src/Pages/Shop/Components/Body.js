@@ -4,14 +4,13 @@ import SneakerCard from './SneakerCard'
 import { useGetProductsQuery } from '../Redux/product/productApi';
 import { useSelector } from 'react-redux';
 
-const Body = ({filter}) => {
+const Body = () => {
 
-  const sneakerFilter = useSelector(state => state.filter);
-  console.log(sneakerFilter);
+  const sneakerFilter = useSelector(state => state.filters.filterBy);
 
   const [sneakers, setSneakers] = useState([]);
 
-  const {data, isLoading, error} = useGetProductsQuery({page: 1, count: 100});
+  const {data, isLoading, error} = useGetProductsQuery({page: 2, count: 100});
 
   useEffect(() => {
     if (!isLoading) {
@@ -27,7 +26,7 @@ const Body = ({filter}) => {
       <SneakerCard
       key={index}
       title={item.value}
-      price={item.data.retail_price_cents/100}
+      price={item.data.retail_price_cents/10000000}
       img={item.data.image_url}
       link={item.data.slug}
       id={item.data.id}

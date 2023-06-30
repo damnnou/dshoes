@@ -9,7 +9,7 @@ const SneakerCard = ({title, link, price, img, id, color, date}) => {
         <img alt={link} className='w-full h-auto relative' src={img} />
         <div className='w-[300px] -translate-y-40 text-transparent flex flex-col items-center justify-center absolute z-20 text-xs'>
         <p className='mb-1 max-w-[250px] h-4 mx-auto overflow-hidden'>{title}</p>
-        <p>{price} $</p>
+        <p>{price} ETH</p>
         </div>
     </div>
     
