@@ -8,7 +8,7 @@ const Cart = () => {
   return (
     <div className='relative'>
         <Link to='/cart' className={`${styles.filter} w-fit flex ml-auto sticky top-2 hover:underline `}>CART (1)</Link>
-        <Header />
+        <Header setFilter={() => ''} />
         <div className={styles.cart}>
             <div className={styles.cartItem}>
                 <img alt="test" className='w-64 h-auto mr-48' src={testImg} />

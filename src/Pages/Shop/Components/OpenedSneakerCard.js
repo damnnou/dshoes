@@ -4,8 +4,8 @@ import LeftMenu from './LeftMenu';
 import Header from './Header';
 import { styles } from '../../../Styles/shopStyles';
 
-const OpenedCard = () => {
-
+const OpenedCard = ({filter, setFilter}) => {
+    
     const location = useLocation();
     const { title, price, img, id, color, date } = location.state;
     const dateString = date.toString()
@@ -13,8 +13,8 @@ const OpenedCard = () => {
     return (
     <div className='relative'>
         <Link to='/cart' className={`${styles.filter} hover:underline w-fit flex ml-auto sticky top-2`}>CART (1)</Link>
-        <LeftMenu />
-        <Header />
+        <LeftMenu setFilter={setFilter} />
+        <Header setFilter={setFilter} />
         <div className={styles.openedcard}>
             <img className='w-[450px] h-auto mr-48' src={img} alt={title} />
             <div className='w-[350px] flex flex-col mt-[70px]'>

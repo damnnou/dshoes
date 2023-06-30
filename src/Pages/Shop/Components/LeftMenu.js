@@ -1,12 +1,22 @@
 import React from 'react'
 import { styles } from '../../../Styles/shopStyles'
 import {Link} from 'react-router-dom'
+import {setFilter} from '../Redux/filter/filter.slice'
+import { useDispatch } from 'react-redux'
 
-const LeftMenu = ({setFilter}) => {
+const LeftMenu = () => {
+
+  const dispatch = useDispatch();
+
+  const changeFilter = (filt) => {
+    console.log(filt);
+    dispatch(setFilter(filt));
+  }
+
   return (
     <div className='flex justify-left items-center pl-12 w-[10%] h-0 bg-white z-20 sticky top-[50%]'>
       <ul>
-      <Link to="/shop" onClick={() => setFilter('')}><li className={styles.filter}>All</li></Link>
+      <Link to="/shop" onClick={() => changeFilter('hi')}><li className={styles.filter}>All</li></Link>
         <Link to="/shop" onClick={() => setFilter('jordan')}><li className={styles.filter}>Jordan</li></Link>
         <Link to="/shop"><li onClick={() => setFilter('dunk')} className={styles.filter}>Dunk</li></Link>
         <Link to="/shop"><li onClick={() => setFilter('zoom')} className={styles.filter}>Zoom</li></Link>
