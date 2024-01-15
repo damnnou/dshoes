@@ -1,5 +1,7 @@
 # Getting Started with
 
+<b> Sepolia testnet only !!!</b>
+
 Install dependencies:
 `npm i`
 
